@@ -1,6 +1,7 @@
 name: Scheduled_run
 
 on:
+  workflow_dispatch:
   # Событие, которое запускает Пайплайн
   schedule:
     - cron: 30 15 * * 1-5
