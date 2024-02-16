@@ -1,0 +1,27 @@
+name: Scheduled_run
+
+on:
+  # Событие, которое запускает Пайплайн
+  schedule:
+    - cron: 30 15 * * 1-5
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Забираем код из удаленного репозитория
+      - name: Pull Postman files from remote reposotore
+        uses: actions/setup-node@v4
+
+      # Установка Node.js для работы с npm (чтобы потом установить Newman)
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+
+      # Установка Newman 
+      - name: Install Newman 
+        run: npm install -g newman-reporter-htmlextra
+      # Запуск коллекции в Newman 
+      - name: Run Postman collection 
+        run: 'newman run Andrey_Trello.postman_collection.json -e TRELLO_Andrey.postman_environment.json --reporter-htmlextra-export trello_report.html'
+      
+         
