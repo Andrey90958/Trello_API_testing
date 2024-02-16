@@ -26,6 +26,6 @@ jobs:
      
       # Запуск коллекции в Newman 
       - name: Run Postman collection 
-        run: 'newman run Andrey_Trello.postman_collection.json -e TRELLO_Andrey.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html'
+        run: newman run Andrey_Trello.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html
       
          
