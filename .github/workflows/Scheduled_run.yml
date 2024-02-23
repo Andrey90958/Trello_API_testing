@@ -1,4 +1,4 @@
-name: Scheduled_run
+name: Scheduled Run
 
 on:
   workflow_dispatch:
@@ -10,9 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Забираем код из удаленного репозитория
-      - name: Pull Postman files from remote reposotore
-        uses: actions/setup-node@v4
+      # Забираем код из удаленного репозитория  
+      - uses: actions/checkout@v4
 
       # Установка Node.js для работы с npm (чтобы потом установить Newman)
       - name: Use Node.js
@@ -26,6 +25,6 @@ jobs:
      
       # Запуск Postman коллекции в Newman 
       - name: Run Postman collection 
-        run: 'newman run Andrey_Trello.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html'
+        run: 'newman run Andrey_Trello.postman_collection.json -e TRELLO_Andrey.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html'
       
          
