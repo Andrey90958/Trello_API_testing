@@ -27,7 +27,8 @@ jobs:
       - name: Run Postman collection 
         run: 'newman run Andrey_Trello.postman_collection.json -e TRELLO_Andrey.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html'
       # Выгрузка отчета htmlextra
-      - name: Generate htmlextra report
-        uses: rjtngit/nunit-html-action@v1
+      - name: Go coverage report
+        uses: ncruces/go-coverage-report@v0.3.0
+            
       
          
