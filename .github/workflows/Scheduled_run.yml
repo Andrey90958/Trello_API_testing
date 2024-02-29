@@ -26,9 +26,8 @@ jobs:
       # Запуск Postman коллекции в Newman 
       - name: Run Postman collection 
         run: 'newman run Andrey_Trello.postman_collection.json -e TRELLO_Andrey.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html'
-      # Выгрузка отчета htmlextra
-      - name: Go coverage report
-        uses: ncruces/go-coverage-report@v0.3.0
-            
-      
+
+        # Просмотр отчета в папке 
+      - name: Viewing the report htmlextra
+        run:  trello_report.html
          
