@@ -28,8 +28,7 @@ jobs:
         run: 'newman run Andrey_Trello.postman_collection.json -e TRELLO_Andrey.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html'
 
       # Просмотр отчета в папке 
-       - name: Мiewing the contents of a folder
-        run: |
-          ls /Trello_API_testing/edit/master/.github/workflows/Scheduled_run.yml
-        
+        run: ls 
+        trello_report.html
+         
          
