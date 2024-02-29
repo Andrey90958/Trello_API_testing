@@ -27,8 +27,5 @@ jobs:
       - name: Run Postman collection 
         run: 'newman run Andrey_Trello.postman_collection.json -e TRELLO_Andrey.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export trello_report.html'
 
-      # Просмотр отчета в папке 
-        run: ls 
-        trello_report.html
-         
+   
          
