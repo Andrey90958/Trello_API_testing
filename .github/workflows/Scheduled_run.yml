@@ -30,6 +30,11 @@ jobs:
         # Убедится, что отчет создан 
       - name: Chech Files
         run: 'ls' 
+        
+        #Прикрепление отчета к тестовому прогону 
+      - name: Upload Artifact1
+        uses: actions/upload-artifact@v4 
+        
 
    
          
