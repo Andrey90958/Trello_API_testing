@@ -34,7 +34,10 @@ jobs:
         #Прикрепление отчета к тестовому прогону 
       - name: Upload Artifact1
         uses: actions/upload-artifact@v4 
-        
+        with:
+            name: Reports
+            path: "*html"
+
 
    
          
