@@ -37,6 +37,21 @@ jobs:
         with:
             name: Reports
             path: "*html"
+            
+        #Отправка отчета на почтовый адрес
+      - name: Send a report
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+            server_address: smtp.gmail.com
+            server_port: 465
+            secure: true
+            username: ${{secrets.MAIL_USERNAME}} 
+            password: ${{secrets.MAIL_PASSWORD}}
+            to: rudakovandrey909@gmail.com
+            subject: Test report
+            from: GitHub Actions <actions@example.com>
+            attachments: trello_report.html
 
 
    
